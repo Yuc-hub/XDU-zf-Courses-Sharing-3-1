@@ -1,0 +1,12 @@
+Sun Apr 10 13:58:21 CST 2022
+Trace back: can't read "::vsimPriv(tbarBtnIgnore)": no such element in array
+    while executing
+"if { ! $::vsimPriv(tbarBtnIgnore) } {
+            ButtonInvoke $b $m
+         }"
+    (procedure "Tbar::BMenu::Action" line 51)
+    invoked from within
+"Tbar::BMenu::Action release .dockbar.tbf0.standard.tb.button_0 .dockbar.tbf0.standard.tb.button_0.menu 23 16 1"
+    (command bound to event)
+  <2:D:/modeltech64_10.4/win64/tk8.5/bgerror.tcl:92: ::tkerror {can't read "::vsimPriv(tbarBtnIgnore)": no such element in array}
+  <1:eval:1: ::tk::dialog::error::bgerror {can't read "::vsimPriv(tbarBtnIgnore)": no such element in array}

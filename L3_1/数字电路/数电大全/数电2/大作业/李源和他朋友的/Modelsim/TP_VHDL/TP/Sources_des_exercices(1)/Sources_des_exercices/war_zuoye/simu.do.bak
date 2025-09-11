@@ -1,0 +1,32 @@
+
+vlib work
+
+vcom -2008 ramchip.vhd
+vcom -2008 board.vhd
+vcom -2008 board_tb.vhd
+
+vsim board_tb
+add wave *
+run 200000 ps
+
+
+
+#vlib work
+#
+#vcom -93 ramchip.vhd
+#vcom -93 board.vhd
+#vcom -93 board_tb.vhd
+#
+#vsim board_tb
+#view signals
+#view structure
+#
+#add wave nCS
+
+#add wave nOE
+#add wave nWE
+#add wave -radix unsigned Addrbus
+#add wave -radix hexadecimal Databus
+
+#add wave -radix hexadecimal /UUT/mem
+#run -all

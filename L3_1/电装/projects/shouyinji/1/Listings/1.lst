@@ -1,0 +1,215 @@
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:59:40 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE 1
+OBJECT MODULE PLACED IN .\Objects\1.obj
+COMPILER INVOKED BY: F:\StudyApp(F)\Keil\C51\BIN\C51.EXE 1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\1.lst) TABS(2) OBJECT(.\Objects\1.obj)
+
+line level    source
+
+   1          /**************************************************************************
+   2           * ??:TEA5767+LCD1602 ??
+   3           * ??:TEA5767+LCD1602 ???
+   4           ***************************************************************************/
+   5          
+   6          #include <reg52.h>
+   7          #include "delay.h"
+*** WARNING C318 IN LINE 7 OF 1.c: can't open file 'delay.h'
+   8          #include "iic.h"
+*** WARNING C318 IN LINE 8 OF 1.c: can't open file 'iic.h'
+   9          #include "tea5767.h"
+*** WARNING C318 IN LINE 9 OF 1.c: can't open file 'tea5767.h'
+  10          #include "lcd1602.h"
+*** WARNING C318 IN LINE 10 OF 1.c: can't open file 'lcd1602.h'
+  11          #include "ds18b20.h"
+*** WARNING C318 IN LINE 11 OF 1.c: can't open file 'ds18b20.h'
+  12          #include "ds1302.h"
+*** WARNING C318 IN LINE 12 OF 1.c: can't open file 'ds1302.h'
+  13          
+  14          // ??????
+  15          sbit s0 = P2^0;
+  16          sbit s1 = P2^4;  // ?????
+  17          sbit s2 = P2^5;  // ?????
+  18          sbit s3 = P2^6;  // ?????
+  19          sbit s4 = P2^7;  // ?????
+  20          
+  21          extern unsigned long frequency; // tea5767 ??????,? tea5767.c ???
+  22          extern unsigned char second, minute, hour, week, day, month, year; // DS1302 ?????
+  23          
+  24          unsigned char code table[] = { '.', 'C' };
+  25          unsigned char code table1[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+  26          
+  27          /**************************************************************************
+  28           * ????:shouyin_display(unsigned long sy)
+  29           * ????:??????
+  30           * ????:sy
+  31           * ????:?
+  32           ***************************************************************************/
+  33          void shouyin_display(unsigned long sy) {
+  34   1          write_com(0x80 + 0x40 + 2); 
+*** WARNING C206 IN LINE 34 OF 1.c: 'write_com': missing function-prototype
+*** ERROR C267 IN LINE 34 OF 1.c: 'write_com': requires ANSI-style prototype
+  35   1          write_data('F');
+  36   1          delayms(1);
+  37   1          write_com(0x80 + 0x40 + 3); 
+  38   1          write_data('M');
+  39   1          delayms(1);
+  40   1          write_com(0x80 + 0x40 + 4); 
+  41   1          write_data(':');
+  42   1          delayms(1);
+  43   1          write_com(0x80 + 0x40 + 5); 
+  44   1          write_data(table1[sy / 100000]);
+  45   1          delayms(1);
+  46   1          write_com(0x80 + 0x40 + 6); 
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:59:40 PAGE 2   
+
+  47   1          write_data(table1[sy % 100000 / 10000]);
+  48   1          delayms(1);
+  49   1          write_com(0x80 + 0x40 + 7); 
+  50   1          write_data(table1[sy % 100000 % 10000 / 1000]);
+  51   1          delayms(1);
+  52   1          write_com(0x80 + 0x40 + 8); 
+  53   1          write_data('.');
+  54   1          delayms(1);
+  55   1          write_com(0x80 + 0x40 + 9); 
+  56   1          write_data(table1[sy % 100000 % 10000 % 1000 / 100]);
+  57   1          delayms(1);
+  58   1          write_com(0x80 + 0x40 + 10); 
+  59   1          write_data('M');
+  60   1          delayms(1);
+  61   1          write_com(0x80 + 0x40 + 11); 
+  62   1          write_data('H');
+  63   1          delayms(1);
+  64   1          write_com(0x80 + 0x40 + 12); 
+  65   1          write_data('z');
+  66   1          delayms(1);
+  67   1      }
+  68          
+  69          /**************************************************************************
+  70           * ????:shoukey()
+  71           * ????:??????
+  72           * ????:?
+  73           * ????:?
+  74           ***************************************************************************/
+  75          void shoukey() {
+  76   1          if (s1 == 0) {
+  77   2              delayms(1);
+  78   2              if (s4 == 0) {
+  79   3                  search(0);
+  80   3                  while (!s4);
+  81   3              }
+  82   2          }
+  83   1          if (s2 == 0) {
+  84   2              delayms(1);
+  85   2              if (s3 == 0) {
+  86   3                  search(1);
+  87   3                  while (!s3);
+  88   3              }
+  89   2          }
+  90   1          if (s3 == 0) {
+  91   2              delayms(1);
+  92   2              if (s2 == 0) {
+  93   3                  auto_search(0);
+  94   3                  while (!s2);
+  95   3              }
+  96   2          }
+  97   1          if (s4 == 0) {
+  98   2              delayms(1);
+  99   2              if (s1 == 0) {
+ 100   3                  auto_search(1);
+ 101   3                  while (!s1);
+ 102   3              }
+ 103   2          }
+ 104   1      }
+ 105          
+ 106          /**************************************************************************
+ 107           * ????:Display_18b20(uint t)
+ 108           * ????:??????
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:59:40 PAGE 3   
+
+ 109           * ????:?
+ 110           * ????:?
+ 111           ***************************************************************************/
+ 112          void Display_18b20(uint t) {
+ 113   1          uchar A1, A2, A3;
+ 114   1          uchar i;
+ 115   1      
+ 116   1          A1 = t / 100;        // ??
+ 117   1          A2 = t % 100 / 10;   // ??
+ 118   1          A3 = t % 10;         // ??
+ 119   1      
+ 120   1          write_com(0x80 + 0x0A);
+ 121   1          write_data(table1[A1]);
+ 122   1          delayms(5);
+ 123   1          write_com(0x80 + 0x0B);
+ 124   1          write_data(table1[A2]);
+ 125   1          delayms(5);
+ 126   1          i = 0;
+ 127   1          write_com(0x80 + 0x0C);
+ 128   1          write_data(table[0]);
+ 129   1          delayms(5);
+ 130   1          write_com(0x80 + 0x0D);
+ 131   1          write_data(table1[A3]);
+ 132   1          delayms(5);
+ 133   1          write_com(0x80 + 0x0E);
+ 134   1          write_data('^');
+ 135   1          delayms(5);
+ 136   1          i = 1;
+ 137   1          write_com(0x80 + 0x0F);
+ 138   1          write_data(table[1]);
+ 139   1          delayms(5);
+ 140   1      }
+ 141          
+ 142          /**************************************************************************
+ 143           * ????:Display_1302()
+ 144           * ????:ds1302 ????
+ 145           * ????:?
+ 146           * ????:?
+ 147           ***************************************************************************/
+ 148          void Display_1302() {
+ 149   1          write_com(0x80 + 0x00);
+ 150   1          write_data(table1[hour / 10 % 10]);
+ 151   1          delayms(1);
+ 152   1          write_com(0x80 + 0x01);
+ 153   1          write_data(table1[hour % 10]);
+ 154   1          delayms(1);
+ 155   1          write_com(0x80 + 0x02);
+ 156   1          write_data(':');
+ 157   1          delayms(1);
+ 158   1          write_com(0x80 + 0x03);
+ 159   1          write_data(table1[minute / 10 % 10]);
+ 160   1          delayms(1);
+ 161   1          write_com(0x80 + 0x04);
+ 162   1          write_data(table1[minute % 10]);
+ 163   1          delayms(1);
+ 164   1          write_com(0x80 + 0x05);
+ 165   1          write_data(':');
+ 166   1          delayms(1);
+ 167   1          write_com(0x80 + 0x06);
+ 168   1          write_data(table1[second / 10 % 10]);
+ 169   1          delayms(1);
+ 170   1          write_com(0x80 + 0x07);
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:59:40 PAGE 4   
+
+ 171   1          write_data(table1[second % 10]);
+ 172   1          delayms(1);
+ 173   1      }
+ 174          
+ 175          void main() {
+ 176   1          s0 = 0;
+ 177   1          InitDS1302();
+ 178   1          lcd1602_init();
+ 179   1          iic_init();
+ 180   1          init_tea5767();
+ 181   1      
+ 182   1          while (1) {
+ 183   2              DS1302ReadTime();
+ 184   2              Display_1302();            // ????
+ 185   2              Display_18b20(Get_Tmp()); // ????
+ 186   2              shouyin_display(frequency); // ????
+ 187   2              shoukey();                 // ??????
+ 188   2          }
+ 189   1      }
+
+C51 COMPILATION COMPLETE.  7 WARNING(S),  1 ERROR(S)

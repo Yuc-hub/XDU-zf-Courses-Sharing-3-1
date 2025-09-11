@@ -1,0 +1,145 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC08_Compteur_Decompteur
+T_opt
+!s110 1648783605
+VhK8jjWk16Z2<A20j6G7e[1
+Z1 04 10 5 work counter_tb bench 1
+=1-3800253869bd-624670f4-278-4bec
+Z2 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z3 OL;O;10.4;61
+R0
+T_opt1
+!s110 1648785805
+V;KoDTKi94A0eMIMfeaUTY1
+R1
+=1-3800253869bd-6246798c-38c-3928
+R2
+n@_opt1
+R3
+Ecounter
+Z4 w1648785177
+Z5 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/ljl_zuoye/exoC08_Compteur_Decompteur
+Z9 8counter.vhd
+Z10 Fcounter.vhd
+l0
+L6
+VcoYfJXThjUY:SHm3ZlN]T3
+!s100 7[`:>PGTZQgRP8lKJS:H03
+Z11 OL;C;10.4;61
+33
+Z12 !s110 1648785801
+!i10b 1
+Z13 !s108 1648785801.832000
+Z14 !s90 -reportprogress|300|-2008|counter.vhd|
+Z15 !s107 counter.vhd|
+!i113 0
+Z16 o-2008
+Z17 tExplicit 1
+Aringcounter
+R5
+R6
+R7
+Z18 DEx4 work 7 counter 0 22 coYfJXThjUY:SHm3ZlN]T3
+l72
+L70
+VRJ>7_`OE>h_c9UGhb40I02
+!s100 ?B^`UB4<ZNoSXNAO_BGGB2
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Artl2
+R5
+R6
+R7
+R18
+l45
+L43
+VCVb78zk?6DGS7MaBeKMdC2
+!s100 MQA`:IhKememm;A3Zfd_D2
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Artl
+R5
+R6
+R7
+R18
+l18
+L16
+V^B3lD0oolK7Zi_]Oej<^^1
+!s100 FC:[BZT[0km=]N]T[oJn;2
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Ecounter_tb
+Z19 w1648785798
+R8
+Z20 8counter_tb.vhd
+Z21 Fcounter_tb.vhd
+l0
+L3
+V7Y2o9@Gg:=EYNz5WY3nBC2
+!s100 gd4=H?5bHW]4>3=7kIfGT0
+R11
+33
+R12
+!i10b 1
+Z22 !s108 1648785801.945000
+Z23 !s90 -reportprogress|300|-2008|counter_tb.vhd|
+Z24 !s107 counter_tb.vhd|
+!i113 0
+R16
+R17
+Abench
+R5
+R18
+DEx4 work 10 counter_tb 0 22 7Y2o9@Gg:=EYNz5WY3nBC2
+R6
+R7
+l18
+L10
+VG[K^:2^hPmZmAPF_2:jQf3
+!s100 5MKC8]dPbF@0da]O7K4J[2
+R11
+33
+R12
+!i10b 1
+R22
+R23
+R24
+!i113 0
+R16
+R17

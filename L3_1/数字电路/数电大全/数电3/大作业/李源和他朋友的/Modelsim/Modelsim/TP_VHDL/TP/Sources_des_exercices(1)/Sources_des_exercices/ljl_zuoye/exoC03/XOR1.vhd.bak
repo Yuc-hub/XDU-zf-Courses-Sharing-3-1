@@ -1,0 +1,26 @@
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+
+entity XOR1 is 
+port (
+		SUM :out std_logic;
+		I1, I2: in std_logic
+		);
+end entity;
+
+architecture structure of XOR1 is
+  signal c1,c2,c3:std_logic;
+begin
+  G1: entity WORK.nand1 port map 
+  (A=> I1,B=>I2,C=>C1);
+  G2: entity WORK.nand1 port map 
+  (A=> I1,B=>C1,C=>C2);
+  G3: entity WORK.nand1 port map
+  (A=> C1,B=>I2,C=>C3);
+  G4: entity WORK.nand1 port map 
+  (A=> C2,B=>C3,C=>SUM);
+  
+end architecture;

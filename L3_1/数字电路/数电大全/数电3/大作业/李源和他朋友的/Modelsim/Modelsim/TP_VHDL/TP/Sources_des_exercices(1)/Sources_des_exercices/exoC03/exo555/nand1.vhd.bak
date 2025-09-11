@@ -1,0 +1,17 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+
+entity monnand is 
+port (	A, B: in std_logic;
+	C: out  std_logic 
+	);
+end entity;
+
+architecture art of monnand is
+begin
+	
+	C<= (A nand B);
+
+end architecture;

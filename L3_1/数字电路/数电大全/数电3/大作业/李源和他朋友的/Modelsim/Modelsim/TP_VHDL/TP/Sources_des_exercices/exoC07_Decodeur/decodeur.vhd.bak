@@ -1,0 +1,20 @@
+-- Squelette pour l'exercice Decodeur
+
+library IEEE;
+use IEEE.Std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity decodeur is
+  port (I : in  Std_logic_vector(5 downto 0);
+        EN: in  Std_logic;
+        Y : out Std_logic_vector(63 downto 0));
+end entity;
+
+architecture rtl of decodeur is
+begin
+  if en = '0' then
+	Y <= (others => '0');
+  else
+	Y(to_integer(I)) <= '1', (others => '0');
+  end if;
+end architecture rtl;

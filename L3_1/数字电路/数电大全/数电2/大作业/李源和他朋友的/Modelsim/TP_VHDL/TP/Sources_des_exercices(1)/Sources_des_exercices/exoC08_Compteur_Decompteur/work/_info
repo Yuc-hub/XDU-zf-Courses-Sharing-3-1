@@ -1,0 +1,136 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC08_Compteur_Decompteur
+T_opt
+!s110 1648787628
+Vz@na7jcCgBY0>Qb^AnJ3I0
+04 10 5 work counter_tb bench 1
+=1-3800253869bd-624680ab-30b-5da0
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
+Ecounter
+Z1 w1648786874
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8counter.vhd
+Z6 Fcounter.vhd
+l0
+L9
+V<FZbY^JC_@n0Dj8lQdNil2
+!s100 A?]MoO;<VPCAGIQb_LjHk3
+Z7 OL;C;10.4;61
+33
+Z8 !s110 1648787627
+!i10b 1
+Z9 !s108 1648787626.987000
+Z10 !s90 -reportprogress|300|-2008|counter.vhd|
+Z11 !s107 counter.vhd|
+!i113 0
+Z12 o-2008
+Z13 tExplicit 1
+Aringcounter
+R2
+R3
+R4
+Z14 DEx4 work 7 counter 0 22 <FZbY^JC_@n0Dj8lQdNil2
+l75
+L73
+VIP_V`fRn3W?i8eWD>hWjf3
+!s100 8T7_H7nA7_koVBMoJj@lc2
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Artl2
+R2
+R3
+R4
+R14
+l48
+L46
+VQ?KPQNT3:1KBCjYVz`X602
+!s100 L:ZJ>2J931T6;^>1cBcef0
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Artl
+R2
+R3
+R4
+R14
+l20
+L18
+V290YJ@ek26;KEl2d=5fEW2
+!s100 jZD9oWiEk<Hi6LKYSD^>?1
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Ecounter_tb
+Z15 w1648787623
+R0
+Z16 8counter_tb.vhd
+Z17 Fcounter_tb.vhd
+l0
+L3
+V7Y2o9@Gg:=EYNz5WY3nBC2
+!s100 gd4=H?5bHW]4>3=7kIfGT0
+R7
+33
+R8
+!i10b 1
+Z18 !s108 1648787627.094000
+Z19 !s90 -reportprogress|300|-2008|counter_tb.vhd|
+Z20 !s107 counter_tb.vhd|
+!i113 0
+R12
+R13
+Abench
+R2
+R14
+DEx4 work 10 counter_tb 0 22 7Y2o9@Gg:=EYNz5WY3nBC2
+R3
+R4
+l18
+L10
+Vz_<mPnjJNJ^PnHRm>7VUK1
+!s100 4HiNb:<CAmXh0WKHF4;TV0
+R7
+33
+R8
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R12
+R13

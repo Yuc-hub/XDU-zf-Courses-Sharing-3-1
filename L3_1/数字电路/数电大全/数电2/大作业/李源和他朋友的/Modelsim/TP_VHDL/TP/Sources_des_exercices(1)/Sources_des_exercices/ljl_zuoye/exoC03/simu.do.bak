@@ -1,0 +1,13 @@
+
+
+vlib work
+vcom -2008 nand1.vhd
+vcom -2008 xor1.vhd
+vcom -2008 xor_tb.vhd
+
+vsim -novopt xor_tb
+
+view objects
+view wave
+add wave *
+run -all

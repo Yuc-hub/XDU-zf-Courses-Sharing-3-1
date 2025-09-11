@@ -1,0 +1,134 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC03/exo555
+Enand1
+Z1 w1648788011
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8nand1.vhd
+Z6 Fnand1.vhd
+l0
+L6
+VeFBYbel9Ql=mIOF<02cC21
+!s100 XA^7Y]5>oC69VPo5L>_iK3
+Z7 OL;C;10.4;61
+33
+Z8 !s110 1648788717
+!i10b 1
+Z9 !s108 1648788717.010000
+Z10 !s90 -reportprogress|300|-2008|nand1.vhd|
+Z11 !s107 nand1.vhd|
+!i113 0
+Z12 o-2008
+Z13 tExplicit 1
+Aart
+R2
+R3
+R4
+Z14 DEx4 work 5 nand1 0 22 eFBYbel9Ql=mIOF<02cC21
+33
+R8
+l13
+L12
+VL@66Lj0M]ghf_>d6z5mB<1
+!s100 ImASllzJcDbWehzNEYHMD3
+R7
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Exor1
+Z15 w1648788316
+R2
+R3
+R4
+R0
+Z16 8xor1.vhd
+Z17 Fxor1.vhd
+l0
+L9
+VlijnabPcB1j>?oISYFIQk3
+!s100 :O3;ShgJ6zO6Nn^TBK8=@1
+R7
+33
+R8
+!i10b 1
+Z18 !s108 1648788717.107000
+Z19 !s90 -reportprogress|300|-2008|xor1.vhd|
+Z20 !s107 xor1.vhd|
+!i113 0
+R12
+R13
+Astructure
+R14
+R2
+R3
+R4
+Z21 DEx4 work 4 xor1 0 22 lijnabPcB1j>?oISYFIQk3
+33
+R8
+l18
+L16
+V4eD2TQ>TecOdklhcI`_SA0
+!s100 ^QMb]5K55V_oPBfXiXWai1
+R7
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R12
+R13
+Exor_tb
+Z22 w1648781677
+R3
+R4
+R0
+Z23 8xor_tb.vhd
+Z24 Fxor_tb.vhd
+l0
+L4
+Vg[jbBChC8N=enWUl6FVob0
+!s100 IIF8iS;nAF5DRR[PX>l<l3
+R7
+33
+R8
+!i10b 1
+Z25 !s108 1648788717.200000
+Z26 !s90 -reportprogress|300|-2008|xor_tb.vhd|
+Z27 !s107 xor_tb.vhd|
+!i113 0
+R12
+R13
+Abench
+R2
+R21
+R3
+R4
+DEx4 work 6 xor_tb 0 22 g[jbBChC8N=enWUl6FVob0
+33
+R8
+l10
+L8
+VH^4Y8zkb;:]hcz>`j<jcn1
+!s100 `n]?m1U@[7;g?c`4Qi7c00
+R7
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R12
+R13

@@ -1,0 +1,3 @@
+arm-elf-as -mcpu=arm7tdmi -g -o arith.o arith.s
+arm-elf-ld -Ttext=0x8000 -e start -o appli.elf arith.o
+arm-elf-insight appli.elf

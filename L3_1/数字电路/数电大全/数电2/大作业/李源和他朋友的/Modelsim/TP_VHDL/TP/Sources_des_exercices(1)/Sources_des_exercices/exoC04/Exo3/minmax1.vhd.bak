@@ -1,0 +1,4 @@
+library IEEE;use IEEE.STD_LOGIC_1164.ALL;entity MAXMIN isport( Min0Max1 :in std_logic;    -- 0:min,     1:max      X,Y      :in  std_logic_vector ( 3 downto 0 );      Z        :out  std_logic_vector ( 3 downto 0));end entity;Architecture Altria of MAXMIN isBegin
+process(Min0Max1,X,Y)BEGINIF MIN0MAX1 = '1' THEN
+	 Z <= X;   if  Y>X THEN       Z<= Y;   END if ;elsif MIN0MAX1='0' THEN
+	 Z <= X;   if  Y<X THEN       Z<=Y;   END IF;end if;END process;END architecture;

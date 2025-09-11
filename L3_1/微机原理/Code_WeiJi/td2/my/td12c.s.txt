@@ -1,0 +1,32 @@
+@ Yangxi td2_ex1_2a.s  
+@ arm-elf-as -mcpu=arm7tdmi -g -o td2_ex1_2a.o td2_ex1_2a.s
+@ arm-elf-ld -Ttext=0x8000 -e start -o td2_ex1_2a.elf td2_ex1_2a.o
+@ arm-elf-insight td2_ex1_2a.elf
+
+							@ directives de compilation --------------------------
+ 
+  .text
+  .align 4 
+  
+  .global start
+
+RES:		.word	0
+A:		.word	7
+B:		.word	5
+C:		.word	3
+							@ Section de code --------------------------
+							@ renvoi maximaum de 3 nums					
+start:
+		LDR      		r0, A
+		LDR			r1, B
+		LDR			r2, C
+		
+		CMP		r0, r1
+		BLT			ELSE1	@r0<r1
+		MOV		r3, r0	@r0>r1, r3=r0
+		B			COMPARE2
+
+ELSE1:	MOV		r3,r1	@r0<r1, r3=r1
+
+wait:	b 	wait
+

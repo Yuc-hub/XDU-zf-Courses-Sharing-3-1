@@ -1,0 +1,176 @@
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:58:29 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE 1
+OBJECT MODULE PLACED IN .\Objects\1.obj
+COMPILER INVOKED BY: F:\StudyApp(F)\Keil\C51\BIN\C51.EXE 1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\1.lst) TABS(2) OBJECT(.\Objects\1.obj)
+
+line level    source
+
+   1          /***************************************************************************
+   2           * ??:????????? 0-F
+   3           * ??:?????????,?????,??????? 0-F
+   4           ****************************************************************************/
+   5          
+   6          #include <reg52.h>
+   7          
+   8          // ?? 74HC138 ????
+   9          sbit ADDR0 = P1^0; // 74HC138:A0
+  10          sbit ADDR1 = P1^1; // 74HC138:A1
+  11          sbit ADDR2 = P1^2; // 74HC138:A2
+  12          sbit ADDR3 = P1^3; // 74HC138:E3 ?????
+  13          sbit EN = P1^4;    // 74HC138:E1, E2 ?????
+  14          
+  15          // ????? code ??????? Flash ?,????? RAM
+  16          unsigned char code display_code[] = {
+  17              /* 0    1    2    3    4    5    6    7    8    9    A    b    c    d    E    F */
+  18              0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90, 0x88, 0x83, 0xa7, 0xa1, 0x86, 0x8e
+  19          };
+  20          
+  21          unsigned int num = 0;
+  22          unsigned char i = 0; // ????????
+  23          unsigned char key_value = 0; // ?????
+  24          
+  25          #define KeyPort P2
+  26          
+  27          /***************************************************************************
+  28           * ????:delayms()
+  29           * ????:???????? 1ms
+  30           * ????:t:0~65535
+  31           * ????:?
+  32           ****************************************************************************/
+  33          void delayms(unsigned int t) {
+  34   1          unsigned char i; // ????????
+  35   1          unsigned int j;
+  36   1          for (i = t; i > 0; i--)
+  37   1              for (j = 110; j > 0; j--);
+  38   1      }
+  39          
+  40          /***************************************************************************
+  41           * ????:display()
+  42           * ????:???????
+  43           * ????:?
+  44           * ????:?
+  45           ****************************************************************************/
+  46          void display() {
+  47   1          switch (i) {
+  48   2              case 0: // ??????
+  49   2                  ADDR0 = 0; ADDR1 = 0; ADDR2 = 0; // 74HC138: Y0 = 0,Y1-Y7 = 1
+  50   2                  i = 0;
+  51   2                  P0 = display_code[key_value];
+  52   2                  break;
+  53   2          }
+  54   1          delayms(1);
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:58:29 PAGE 2   
+
+  55   1          P0 = 0xFF; // ???????,?????;????????,????,??????????
+  56   1      }
+  57          
+  58          /***************************************************************************
+  59           * ????:keyscan()
+  60           * ????:??????????
+  61           * ????:?
+  62           * ????:?
+  63           ****************************************************************************/
+  64          void keyscan() {
+  65   1          unsigned char temp;
+  66   1      
+  67   1          // ???????
+  68   1          KeyPort = 0xFE;
+  69   1          temp = KeyPort & 0xF0;
+  70   1          if (temp != 0xF0) { // ????
+  71   2              delayms(10); // ?????
+  72   2              temp = KeyPort; // ????
+  73   2              if (temp != 0xF0) { // ????????
+  74   3                  temp = KeyPort; // ????????? temp
+  75   3                  switch (temp) { // ?? temp ??
+  76   4                      case 0xEE: key_value = 1; break;
+  77   4                      case 0xDE: key_value = 2; break;
+  78   4                      case 0xBE: key_value = 3; break;
+  79   4                      case 0x7E: key_value = 15; break;
+  80   4                  }
+  81   3              }
+  82   2          }
+  83   1          // ?????
+  84   1          KeyPort = 0xFD;
+  85   1          temp = KeyPort & 0xF0;
+  86   1          if (temp != 0xF0) { // ????
+  87   2              delayms(10); // ?????
+  88   2              temp = KeyPort; // ????
+  89   2              if (temp != 0xF0) { // ????????
+  90   3                  temp = KeyPort; // ????????? temp
+  91   3                  switch (temp) { // ?? temp ??
+  92   4                      case 0xED: key_value = 4; break;
+  93   4                      case 0xDD: key_value = 5; break;
+  94   4                      case 0xBD: key_value = 6; break;
+  95   4                      case 0x7D: key_value = 14; break;
+  96   4                  }
+  97   3              }
+  98   2          }
+  99   1          // ?????
+ 100   1          KeyPort = 0xFB;
+ 101   1          temp = KeyPort & 0xF0;
+ 102   1          if (temp != 0xF0) { // ????
+ 103   2              delayms(10); // ?????
+ 104   2              temp = KeyPort; // ????
+ 105   2              if (temp != 0xF0) { // ????????
+ 106   3                  temp = KeyPort; // ????????? temp
+ 107   3                  switch (temp) { // ?? temp ??
+ 108   4                      case 0xEB: key_value = 7; break;
+ 109   4                      case 0xDB: key_value = 8; break;
+ 110   4                      case 0xBB: key_value = 9; break;
+ 111   4                      case 0x7B: key_value = 13; break;
+ 112   4                  }
+ 113   3              }
+ 114   2          }
+ 115   1          // ?????
+ 116   1          KeyPort = 0xF7;
+C51 COMPILER V9.54   1                                                                     12/28/2024 14:58:29 PAGE 3   
+
+ 117   1          temp = KeyPort & 0xF0;
+ 118   1          if (temp != 0xF0) { // ????
+ 119   2              delayms(10); // ?????
+ 120   2              temp = KeyPort; // ????
+ 121   2              if (temp != 0xF0) { // ????????
+ 122   3                  temp = KeyPort; // ????????? temp
+ 123   3                  switch (temp) { // ?? temp ??
+ 124   4                      case 0xE7: key_value = 10; break;
+ 125   4                      case 0xD7: key_value = 11; break;
+ 126   4                      case 0xB7: key_value = 12; break;
+ 127   4                      case 0x77: key_value = 0; break;
+ 128   4                  }
+ 129   3              }
+ 130   2          }
+ 131   1      }
+ 132          
+ 133          void main() {
+ 134   1          // ??? 74HC138
+ 135   1          ADDR3 = 1; // E3 ?????
+ 136   1          EN = 0;    // E1, E2 ?????
+ 137   1      
+ 138   1          ADDR0 = 0;
+ 139   1          ADDR1 = 1;
+ 140   1          ADDR2 = 1; // 74HC138: Y6 = 0; Y1~Y5, Y7 = 1
+ 141   1      
+ 142   1          P0 = 0xFF; // ?????,???????
+ 143   1      
+ 144   1          while (1) {
+ 145   2              keyscan(); // ????
+ 146   2              display(); // ????????
+ 147   2          }
+ 148   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    334    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

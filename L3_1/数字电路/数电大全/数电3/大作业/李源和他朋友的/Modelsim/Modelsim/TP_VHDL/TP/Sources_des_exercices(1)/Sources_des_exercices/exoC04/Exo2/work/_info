@@ -1,0 +1,117 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC04/Exo2
+T_opt
+!s110 1648477936
+V`7I7aY[nB[A=O;QXk0[8S2
+04 11 3 work serialor_tb tb1 1
+=1-3800253869bd-6241c6ef-2d5-461c
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
+R0
+Eserialor
+Z1 w1648458629
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8serialor.vhd
+Z5 Fserialor.vhd
+l0
+L6
+VFYNcnl9`UdFjJc22]H6ce2
+!s100 hoH6VJjI<n8Kdji`DYC8C0
+Z6 OL;C;10.4;61
+33
+Z7 !s110 1648478294
+!i10b 1
+Z8 !s108 1648478294.084000
+Z9 !s90 -reportprogress|300|-2008|serialor.vhd|
+Z10 !s107 serialor.vhd|
+!i113 0
+Z11 o-2008
+Z12 tExplicit 1 NoCoverage 1
+Artl
+R2
+R3
+Z13 DEx4 work 8 serialor 0 22 FYNcnl9`UdFjJc22]H6ce2
+l15
+L11
+VH32e[oneo8Df63lXV;z2Y2
+!s100 M[f_hJaG5kmBz;kUF;QIn2
+R6
+33
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Eserialor_tb
+Z14 w1490028792
+R2
+R3
+R0
+Z15 8serialor_tb.vhd
+Z16 Fserialor_tb.vhd
+l0
+L11
+V;daW=5e8eHDC<>`bNl`I02
+!s100 PM0DEXoS@l[=J6bP991Ae2
+R6
+33
+R7
+!i10b 1
+Z17 !s108 1648478294.202000
+Z18 !s90 -reportprogress|300|-2008|serialor_tb.vhd|
+Z19 !s107 serialor_tb.vhd|
+!i113 0
+R11
+R12
+Atb2
+R13
+R2
+R3
+Z20 DEx4 work 11 serialor_tb 0 22 ;daW=5e8eHDC<>`bNl`I02
+l429
+L424
+Z21 V4Tn5QV:ad295n6@0iS1iT3
+Z22 !s100 JHk=L7Tb79QHP]De:m9:E0
+R6
+33
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R11
+R12
+Atb1
+R13
+R2
+R3
+R20
+l21
+L15
+Z23 V56egSBGTAccJM`LB22fJ92
+Z24 !s100 dbb3:hkIdVoWMh9XInCRE1
+R6
+33
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R11
+R12

@@ -1,0 +1,159 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC10_RamBoard
+T_opt
+!s110 1649645071
+VdzP]Wa3HgaY>_8Ac<f@OI1
+Z1 04 8 5 work board_tb bench 1
+=1-3800253869bd-6253960e-3ad-4ef8
+Z2 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z3 OL;O;10.4;61
+R0
+T_opt1
+!s110 1649604729
+VUaZW9KOdmFXfYhWc>l_je3
+R1
+=1-3800253869bd-6252f878-3d3-4a9c
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1649601078
+VZ<aZPnaAf^VGl21c`YUb:3
+R1
+=1-3800253869bd-6252ea36-52-1114
+R2
+n@_opt2
+R3
+R0
+Eboard
+Z4 w1649645063
+Z5 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/wby_zuoye
+Z9 8board.vhd
+Z10 Fboard.vhd
+l0
+L8
+VDZJU_X:YaPW=;O7>BoVlW1
+!s100 9_6`_S4Hb]OlbAokD]Tf12
+Z11 OL;C;10.4;61
+33
+Z12 !s110 1649645190
+!i10b 1
+Z13 !s108 1649645190.274000
+Z14 !s90 -reportprogress|300|-2008|board.vhd|
+Z15 !s107 board.vhd|
+!i113 0
+Z16 o-2008
+Z17 tExplicit 1
+Astruct
+Z18 DEx4 work 7 ramchip 0 22 2TAeCBI6oo61C3H7g3a2]3
+R5
+R6
+R7
+Z19 DEx4 work 5 board 0 22 DZJU_X:YaPW=;O7>BoVlW1
+l18
+L14
+VeYP4JH>Y7l:<Bhh_8SLzd0
+!s100 QTLJYT7B[bUgK:IZ[fBzI3
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Eboard_tb
+Z20 w1417092006
+R8
+Z21 8board_tb.vhd
+Z22 Fboard_tb.vhd
+l0
+L4
+ViCliO<P;Ed1Nb`VTa:VkO3
+!s100 gjeInhhmbj^X8LPid_=cF2
+R11
+33
+R12
+!i10b 1
+Z23 !s108 1649645190.361000
+Z24 !s90 -reportprogress|300|-2008|board_tb.vhd|
+Z25 !s107 board_tb.vhd|
+!i113 0
+R16
+R17
+Abench
+R19
+Z26 DEx4 work 8 board_tb 0 22 iCliO<P;Ed1Nb`VTa:VkO3
+R5
+R6
+R7
+l18
+L11
+Z27 VkBICiLANf:K[UXlmjA[N52
+Z28 !s100 <]]O;DPnVY19QUKV3nKnN1
+R11
+33
+R12
+!i10b 1
+R23
+R24
+R25
+!i113 0
+R16
+R17
+Eramchip
+Z29 w1649605621
+R5
+R6
+R7
+R8
+Z30 8ramchip.vhd
+Z31 Framchip.vhd
+l0
+L8
+V2TAeCBI6oo61C3H7g3a2]3
+!s100 CC1_`TXHeMKUV>PRHE2gQ0
+R11
+33
+R12
+!i10b 1
+Z32 !s108 1649645190.186000
+Z33 !s90 -reportprogress|300|-2008|ramchip.vhd|
+Z34 !s107 ramchip.vhd|
+!i113 0
+R16
+R17
+Abehaviour
+R5
+R6
+R7
+R18
+l19
+L16
+VOQNoS1H<HJ>od8g=W^fkK0
+!s100 E7zaVcI`L=Uc``MDUzJZJ0
+R11
+33
+R12
+!i10b 1
+R32
+R33
+R34
+!i113 0
+R16
+R17

@@ -1,0 +1,105 @@
+-- auteur: Yuan Li
+-- numero: 19022100022
+
+-- Squelette pour l'exercice Compteur
+library IEEE;
+use IEEE.Std_logic_1164.all;
+use IEEE.Numeric_std.all;
+
+entity Counter is
+  port (Clock, Reset, Enable, Load, UpDn: in Std_logic;
+        Data: in Std_logic_vector(7 downto 0);
+        Q:   out Std_logic_vector(7 downto 0));
+end entity Counter;
+
+
+
+-- Première partie
+architecture RTL of Counter is
+signal COUNT : unsigned(7 downto 0);
+begin
+process(clock, reset)
+begin
+if reset = '1' then  -- immediatement
+	COUNT <= "00000000";
+elsif clock'event and clock = '1' then  -- Synchrone
+--elsif rising_edge(clock) then
+	if enable = '1' then
+		if load = '1' then  -- prechargement
+			COUNT <= unsigned(data);
+		elsif updn = '1' then
+			COUNT <= COUNT + 1;
+		elsif updn = '0' then
+			COUNT <= COUNT - 1;
+		end if;
+	end if;
+end if;
+end process;
+
+Q <= std_logic_vector(COUNT);
+
+end architecture;
+
+
+
+-- Deuxième partie
+architecture RTL2 of Counter is
+signal COUNT : unsigned(7 downto 0);
+begin
+process(clock)
+begin
+if rising_edge(clock) then  -- synchrone
+	if reset = '1' then  -- reset synchrone
+		COUNT <= (others => '0');
+	elsif enable = '1' then
+		if load = '1' then    -- prechargement
+			COUNT <= unsigned(data);  -- conversions de types
+		elsif updn = '1' then
+			COUNT <= COUNT + 1;  -- comptage
+		elsif updn = '0' then
+			COUNT <= COUNT - 1;  -- decomptage
+		end if;
+	end if;
+end if;
+end process;
+
+Q <= std_logic_vector(COUNT);
+
+end architecture;
+
+
+
+-- Troisième partie
+architecture RingCounter of Counter is
+signal COUNT : unsigned(7 downto 0);
+begin
+process(clock)
+begin
+if rising_edge(clock) then
+	if reset = '1' then
+		COUNT <= (others => '0');
+	elsif enable = '1' then
+		if load = '1' then    -- prechargement
+			COUNT <= unsigned(data);
+
+		elsif updn = '1' then  -- shift left
+			if COUNT = "00000000" or COUNT = "10000000" then
+				COUNT <= "00000001";
+			else
+				COUNT <= COUNT sll 1;  
+			end if;
+
+		elsif updn = '0' then    -- shift right
+			if COUNT = "00000000" or COUNT = "00000001" then
+				COUNT <= "00000001";
+			else
+				COUNT <= COUNT srl 1;
+			end if;
+		end if;
+	end if;
+end if;
+end process;
+
+Q <= std_logic_vector(COUNT);
+
+end architecture;

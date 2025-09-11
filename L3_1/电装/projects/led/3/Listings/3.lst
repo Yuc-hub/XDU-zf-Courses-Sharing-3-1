@@ -1,0 +1,93 @@
+C51 COMPILER V9.54   3                                                                     12/28/2024 14:55:00 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE 3
+OBJECT MODULE PLACED IN .\Objects\3.obj
+COMPILER INVOKED BY: F:\StudyApp(F)\Keil\C51\BIN\C51.EXE 3.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\3.lst) TABS(2) OBJECT(.\Objects\3.obj)
+
+line level    source
+
+   1          /**************************************************************************
+   2           * ??:???
+   3           * ??:8 ? LED ?????
+   4           ***************************************************************************/
+   5          
+   6          #include <reg52.h>
+   7          
+   8          // ?? 74HC138 ????
+   9          sbit ADDR0 = P1^0; // 74HC138:A0
+  10          sbit ADDR1 = P1^1; // 74HC138:A1
+  11          sbit ADDR2 = P1^2; // 74HC138:A2
+  12          sbit ADDR3 = P1^3; // 74HC138:E3 ?????
+  13          sbit EN = P1^4;    // 74HC138:E1, E2 ?????
+  14          
+  15          /**************************************************************************
+  16           * ????:delayms()
+  17           * ????:???????? 1ms
+  18           * ????:t:0~65535
+  19           * ????:?
+  20           ***************************************************************************/
+  21          void delayms(unsigned int t) {
+  22   1          unsigned char i; // ????????
+  23   1          unsigned int j;
+  24   1          for (i = t; i > 0; i--)
+  25   1              for (j = 110; j > 0; j--);
+  26   1      }
+  27          
+  28          void main() {
+  29   1          unsigned char i; // ??????
+  30   1      
+  31   1          // ??? 74HC138
+  32   1          ADDR3 = 1; // E3 ?????
+  33   1          EN = 0;    // E1, E2 ?????
+  34   1      
+  35   1          // ?? 74HC138
+  36   1          ADDR0 = 0;
+  37   1          ADDR1 = 1;
+  38   1          ADDR2 = 1; // 74HC138: Y6 = 0,Y0-Y5,Y7 = 1
+  39   1          
+  40   1          P0 = 0xFF; // ?????? LED
+  41   1      
+  42   1          while (1) {
+  43   2              // ?????? LED
+  44   2              for (i = 0; i < 8; i++) {
+  45   3                  P0 = P0 & ~(0x01 << i); // ????????? LED
+  46   3                  delayms(1000);
+  47   3              }
+  48   2              
+  49   2              P0 = 0xFF; // ????? LED
+  50   2              delayms(500);
+  51   2      
+  52   2              P0 = 0x00; // ????? LED
+  53   2              delayms(500);
+  54   2      
+C51 COMPILER V9.54   3                                                                     12/28/2024 14:55:00 PAGE 2   
+
+  55   2              P0 = 0xFF; // ????? LED
+  56   2              delayms(500);
+  57   2      
+  58   2              // ?????? LED
+  59   2              for (i = 8; i > 0; i--) {
+  60   3                  P0 = P0 & ~(0x01 << (i - 1)); // ????????? LED
+  61   3                  delayms(1000);
+  62   3              }
+  63   2      
+  64   2              P0 = 0xFF; // ????? LED
+  65   2              delayms(500);
+  66   2          }
+  67   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    122    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,101 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Program/Modelsim/TP_VHDL/Sources_des_exercices(1)/Sources_des_exercices/exoC09_Ramchip
+T_opt
+!s110 1649524330
+V3fo6ZYh>@ifkj=k5`lIU_3
+04 10 5 work ramchip_tb bench 1
+=1-3800253869bd-6251be69-3af-62c4
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
+R0
+Eramchip
+Z1 w1649509126
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8ramchip.vhd
+Z6 Framchip.vhd
+l0
+L6
+VXTa0Z<f8oL<5MR<J5FDlb1
+!s100 I<eL8WW:0P;G56kCFPRJ91
+Z7 OL;C;10.4;61
+33
+Z8 !s110 1649653646
+!i10b 1
+Z9 !s108 1649653646.707000
+Z10 !s90 -reportprogress|300|-2008|ramchip.vhd|
+Z11 !s107 ramchip.vhd|
+!i113 0
+Z12 o-2008
+Z13 tExplicit 1
+Abehaviour
+R2
+R3
+R4
+Z14 DEx4 work 7 ramchip 0 22 XTa0Z<f8oL<5MR<J5FDlb1
+l15
+L12
+VO7?HU[L]XJ:DKj_=4?VV?0
+!s100 CJ3Vb_M8z4fQKmTY96Bi71
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Eramchip_tb
+Z15 w1649524318
+R3
+R4
+R0
+Z16 8ramchip_tb.vhd
+Z17 Framchip_tb.vhd
+l0
+L4
+VG?B?cU577BY7<jjlCo=g@3
+!s100 ?oHOTZe<B7g4VLoj4LnZ00
+R7
+33
+R8
+!i10b 1
+Z18 !s108 1649653646.815000
+Z19 !s90 -reportprogress|300|-2008|ramchip_tb.vhd|
+Z20 !s107 ramchip_tb.vhd|
+!i113 0
+R12
+R13
+Abench
+R2
+R14
+R3
+R4
+Z21 DEx4 work 10 ramchip_tb 0 22 G?B?cU577BY7<jjlCo=g@3
+l12
+L7
+Z22 VdB9zSQ5]?o5iI=lZhI_4;2
+Z23 !s100 `k8<7HLEbmK9HK@_ELa=G2
+R7
+33
+R8
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R12
+R13
